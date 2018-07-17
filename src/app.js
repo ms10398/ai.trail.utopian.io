@@ -53,7 +53,7 @@ async function run () {
                 let weight = 0;
                 const votingPower = (await getVotingPower("utopian-io"));
 
-                if (votingPower <= 9950) {
+                if (votingPower <= 9900) {
                     break;
                 }
 
@@ -98,7 +98,7 @@ async function run () {
 
         setTimeout(async function() {
             await run();
-        }, 1000 * 60 * 160);
+        }, 1000 * 60 * 144);
 
     }catch(e) {
         logger.log({
