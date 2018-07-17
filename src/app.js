@@ -53,6 +53,7 @@ async function run () {
                 let weight = 0;
                 const votingPower = (await getVotingPower("utopian-io"));
 
+                console.log("CURRENT VOTING POWER", votingPower);
                 if (votingPower <= 9900) {
                     break;
                 }
