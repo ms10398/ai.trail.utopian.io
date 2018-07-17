@@ -51,6 +51,11 @@ async function run () {
             for(var v = 0; v < votes.length; v++) {
                 const data = votes[v];
                 let weight = 0;
+                const votingPower = (await getVotingPower("utopian-io"));
+
+                if (votingPower <= 9950) {
+                    break;
+                }
 
                 const getPostObj = async function () {
                     try {
@@ -68,12 +73,6 @@ async function run () {
                 }
 
                 console.log("NOW CHECKING POST", data.permlink);
-
-                const votingPower = (await getVotingPower("utopian-io"));
-
-                if (votingPower <= 9950) {
-                    break;
-                }
 
                 if (data.voter !== data.author && data.voter === followed.account || (data.voter === followed.account && followed.whitelisted === true)) {
                     weight = Math.round(data.weight * followed.weight_divider);
@@ -97,7 +96,9 @@ async function run () {
             }
         }
 
-
+        setTimeout(async function() {
+            await run();
+        }, 1000 * 60 * 120);
 
     }catch(e) {
         logger.log({
@@ -107,9 +108,7 @@ async function run () {
 
         console.log(e);
 
-        setTimeout(async function() {
-            await run();
-        }, 1000 * 60 * 120);
+        await run();
     }
 }
 
@@ -162,7 +161,7 @@ async function parseVotes (account) {
 
                 const dateSinceVote = dateDiff(new Date(vote.time), new Date(), "days");
                 if (dateSinceVote > 2) {
-                    console.log("OVER 1 DAYS MARK");
+                    console.log("OVER 2 DAYS MARK");
                     break;
                 }
 
