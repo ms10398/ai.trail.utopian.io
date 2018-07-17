@@ -98,7 +98,7 @@ async function run () {
 
         setTimeout(async function() {
             await run();
-        }, 1000 * 60 * 120);
+        }, 1000 * 60 * 160);
 
     }catch(e) {
         logger.log({
