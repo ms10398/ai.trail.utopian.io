@@ -87,7 +87,7 @@ async function run () {
 
                     console.log("VOTE IS READY TO BE STREAMED WITH WEIGHT", weight);
 
-                    await timeout(5000);
+                    await timeout(20000);
 
                     await StreamVote(postObj, data.author, data.permlink, weight, comment, followed.check_context);
 
