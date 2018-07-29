@@ -10,7 +10,7 @@ const labels = config.labels
 const following = config.following
 const timeout = ms => new Promise(res => setTimeout(res, ms));
 
-steem.api.setOptions({ url: 'https://steemd.minnowsupportproject.orggithub' })
+steem.api.setOptions({ url: 'https://steemd.minnowsupportproject.org' })
 
 const logger = winston.createLogger({
     transports: [
