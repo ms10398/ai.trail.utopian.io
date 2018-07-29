@@ -10,7 +10,7 @@ const labels = config.labels
 const following = config.following
 const timeout = ms => new Promise(res => setTimeout(res, ms));
 
-steem.api.setOptions({ url: 'http://rpc.buildteam.io/' })
+steem.api.setOptions({ url: 'https://steemd.minnowsupportproject.orggithub' })
 
 const logger = winston.createLogger({
     transports: [
@@ -54,7 +54,7 @@ async function run () {
                 const votingPower = (await getVotingPower("utopian-io"));
 
                 console.log("CURRENT VOTING POWER", votingPower);
-                if (votingPower <= 9900) {
+                if (votingPower <= 9800) {
                     break;
                 }
 
@@ -99,7 +99,7 @@ async function run () {
 
         setTimeout(async function() {
             await run();
-        }, 1000 * 60 * 280);
+        }, 1000 * 60 * 60 * 6); // wait 6 hours
 
     }catch(e) {
         logger.log({
