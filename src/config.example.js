@@ -5,34 +5,22 @@ const config = {
     accname: '<Account to use for trailing here>',
     posting: '<Posting key of the account>',
     following: [
-        {
-            account: 'ocd',
-            check_context: true,
-            weight_divider: 0.05,
-            max_weight: 5000,
-            comment: `#### Hi @{AUTHOR}!\n\nYour post was upvoted by utopian.io in cooperation with {VOTER} - supporting knowledge, innovation and technological advancement on the Steem Blockchain.\n\n#### Contribute to Open Source with utopian.io\nLearn how to contribute on <a href="https://join.utopian.io">our website</a> and join the new open source economy.\n\n**Want to chat? Join the Utopian Community on Discord https://discord.gg/h52nFrV**`
-        },
-        {
-            account: 'steemstem',
-            check_context: false,
-            weight_divider: 0.15,
-            max_weight: 15000,
-            comment: `#### Hi @{AUTHOR}!\n\nYour post was upvoted by utopian.io in cooperation with {VOTER} - supporting knowledge, innovation and technological advancement on the Steem Blockchain.\n\n#### Contribute to Open Source with utopian.io\nLearn how to contribute on <a href="https://join.utopian.io">our website</a> and join the new open source economy.\n\n**Want to chat? Join the Utopian Community on Discord https://discord.gg/h52nFrV**`
-        },
-        {
-            account: 'steemmakers',
-            check_context: true,
-            weight_divider: 0.05,
-            max_weight: 5000,
-            comment: `#### Hi @{AUTHOR}!\n\nYour post was upvoted by utopian.io in cooperation with {VOTER} - supporting knowledge, innovation and technological advancement on the Steem Blockchain.\n\n#### Contribute to Open Source with utopian.io\nLearn how to contribute on <a href="https://join.utopian.io">our website</a> and join the new open source economy.\n\n**Want to chat? Join the Utopian Community on Discord https://discord.gg/h52nFrV**`
-        },
-        {
-            account: 'steemhunt',
-            check_context: true,
-            weight_divider: 0.05,
-            max_weight: 5000,
-            comment: `#### Hi @{AUTHOR}!\n\nYour post was upvoted by utopian.io in cooperation with {VOTER} - supporting knowledge, innovation and technological advancement on the Steem Blockchain.\n\n#### Contribute to Open Source with utopian.io\nLearn how to contribute on <a href="https://join.utopian.io">our website</a> and join the new open source economy.\n\n**Want to chat? Join the Utopian Community on Discord https://discord.gg/h52nFrV**`
-        }
+      {
+        account: 'steemstem',
+        check_context: false,
+        weight_divider: 0.15,
+        max_weight: 4000,
+        comment: `#### Hi @{AUTHOR}!\n\nYour post was upvoted by utopian.io in cooperation with {VOTER} - supporting knowledge, innovation and technological advancement on the Steem Blockchain.\n\n#### Contribute to Open Source with utopian.io\nLearn how to contribute on <a href="https://join.utopian.io">our website</a> and join the new open source economy.\n\n**Want to chat? Join the Utopian Community on Discord https://discord.gg/h52nFrV**`,
+        weight_trigger: 6000,
+      },
+      {
+        account: 'steemmakers',
+        check_context: true,
+        weight_divider: 0.05,
+        max_weight: 500,
+        comment: `#### Hi @{AUTHOR}!\n\nYour post was upvoted by utopian.io in cooperation with {VOTER} - supporting knowledge, innovation and technological advancement on the Steem Blockchain.\n\n#### Contribute to Open Source with utopian.io\nLearn how to contribute on <a href="https://join.utopian.io">our website</a> and join the new open source economy.\n\n**Want to chat? Join the Utopian Community on Discord https://discord.gg/h52nFrV**`,
+        weight_trigger: 1,
+      }
     ],
     labels: [
         '/science/biology/biotechnology',

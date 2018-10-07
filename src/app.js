@@ -75,11 +75,11 @@ async function run () {
 
                 console.log("NOW CHECKING POST", data.permlink);
 
-                if (data.voter !== data.author && data.voter === followed.account || (data.voter === followed.account && followed.whitelisted === true)) {
+                if (data.voter !== data.author && data.voter === followed.account && data.weight >= followed.weight_trigger || (data.voter === followed.account && followed.whitelisted === true)) {
                     weight = Math.round(data.weight * followed.weight_divider);
                     weight = weight > followed.max_weight ? followed.max_weight : weight;
 
-                    var comment = followed.comment.replace('{AUTHOR}', data.author).replace('{VOTER}', data.voter)
+                    let comment = followed.comment.replace('{AUTHOR}', data.author).replace('{VOTER}', data.voter)
 
                     logger.log({
                         level: 'info',
